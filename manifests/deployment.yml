@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: manojraibeshoponweb 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: manojraibeshoponweb
+  template:
+    metadata:
+      labels:
+        app: manojraibeshoponweb 
+    spec:
+      containers:
+        - name: manojraibeshoponweb 
+          image: myregcontainers.azurecr.io/manojraibeshoponweb
+          ports:
+          - containerPort: 8080
